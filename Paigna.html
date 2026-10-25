@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cafeteria</title>
+        <link rel="stylesheet" href="Disenio.css">
+    </head>
+    <body>
+
+        <!-- Encabezado superior superEpico -->
+        <header>Cafeteria</header>
+
+        <!-- Contenedor del Formulario -->
+        <div class="container">
+            <div class="titulo-registro">Registro</div>
+
+            <form id="formPedido">                             <!-- --------------------- Epic forum --------------------- -->
+                <!-- Nombre del cliente -->
+                <div class="form-group">
+                    <label for="nombre">Nombre del cliente</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+                </div>
+
+                <!-- Correo Electronico -->
+                <div class="form-group">
+                    <label for="correo">Correo Electronico</label>
+                    <input type="email" id="correo" name="correo" placeholder="Correo Electronico" required>
+                </div>
+
+                <!-- Producto -->
+                <div class="form-group">
+                    <label for="producto">Producto</label>
+                    <select id="producto" name="producto" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="cafe-americano">Café Americano</option>
+                        <option value="cappuccino">Cappuccino</option>
+                        <option value="latte">Latte</option>
+                        <option value="te">Té</option>
+                    </select>
+                </div>
+
+                <!-- Cantidad -->
+                <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" id="cantidad" name="cantidad" value="1" min="1">
+                </div>
+
+                <!-- Tamaño (Radio Buttons) -->
+                <div class="form-group">
+                    <label>Tamaño</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="tamano" value="Chico 300mL"> Chico 300mL</label>
+                        <label><input type="radio" name="tamano" value="Mediano 400mL"> Mediano 400mL</label>
+                        <label><input type="radio" name="tamano" value="Grande 500mL"> Grande 500mL</label>
+                    </div>
+                </div>
+
+                <!-- Entrega a domicilio (Checkboxes) -->
+                <div class="form-group">
+                    <label>Entrega a domicilio</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="domicilio" name="entrega" value="Domicilio"> Domicilio</label>
+                        <label><input type="checkbox" id="local" name="entrega" value="Para comer en el local"> Para comer en el local</label>
+                    </div>
+                </div>
+
+                <!-- Notas -->
+                <div class="form-group">
+                    <label for="notas">Notas</label>
+                    <textarea id="notas" name="notas" placeholder="Alguna nota sobre su pedido?"></textarea>
+                </div>
+
+                <!-- Botones -->
+                <div class="btn-group">
+                    <button type="reset" class="btn-limpiar">Limpiar</button>
+                    <button type="submit" class="btn-registrar">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Ventana emergente (Alerta personalizada para que se vea que el pedido fue realizado) -->
+        <div class="modal-overlay" id="modalAlerta">
+            <div class="modal-box">
+                <div class="modal-header">¡Registrado!</div>
+                <div class="modal-body">
+                    Tu pedido ha quedado registrado en la cafeteria, para ser entregado en el local.
+                </div>
+                <button class="btn-ok" onclick="cerrarAlerta()">ok</button>
+            </div>
+        </div>
+
+        <!-- JavaScript para mostrar y cerrar la alerta -->
+        <script src="Funcion.js"></script>
+    </body>
+</html>
